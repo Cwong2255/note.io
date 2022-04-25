@@ -1,5 +1,13 @@
+import Footer from "./Footer";
+import Header from "./Header";
+
 function App() {
-  return <h1 className="text-3xl font-light underline">Hello world!!!</h1>;
+  return (
+    <div className="bg-[url('/src/assets/cubes.png')]">
+      <Header />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
