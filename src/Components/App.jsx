@@ -6,8 +6,10 @@ function App() {
   return (
     <div>
       <Header />
-      <Footer />
       <Note />
+      <Note />
+      <Note />
+      <Footer />
     </div>
   );
 }

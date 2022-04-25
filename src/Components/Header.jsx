@@ -5,8 +5,8 @@ function Header() {
   return (
     <header>
       <div className="bg-[#FFD32D] bg-opacity-90 py-4 flex justify-between items-center">
-        <div>
-          <h1 className="text-3xl tracking-wide text-white mx-4 font-semibold">
+        <div className="mx-8">
+          <h1 className="text-3xl tracking-wide text-white font-semibold">
             <EventNoteOutlinedIcon
               fontSize="large"
               sx={{ color: "#FFB72B" }}
@@ -16,10 +16,12 @@ function Header() {
           </h1>
         </div>
 
-        <button className="px-3 py-2 bg-[#A865C9] rounded-lg shadow-md mx-10">
-          <DarkModeIcon sx={{ color: "white" }} />
-          {/* <LightModeOutlinedIcon />         */}
-        </button>
+        <div className="mx-10">
+          <button className="px-3 py-2 bg-[#A865C9] rounded-lg shadow-md">
+            <DarkModeIcon sx={{ color: "white" }} />
+            {/* <LightModeOutlinedIcon />         */}
+          </button>
+        </div>
       </div>
     </header>
   );
