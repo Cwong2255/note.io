@@ -8,7 +8,7 @@ function Header() {
 
   return (
     <header>
-      <div className="bg-[#FFD32D] bg-opacity-90 py-4 flex justify-between items-center">
+      <div className="bg-[#FFD32D] dark:bg-[#202023] bg-opacity-90 py-4 flex justify-between items-center transition-all duration-500">
         <div className="mx-8">
           <h1 className="text-3xl tracking-wide text-white font-semibold">
             <EventNoteRoundedIcon
@@ -22,12 +22,12 @@ function Header() {
         <div className="mx-10">
           <button
             onClick={() => setTheme(colorTheme)}
-            className="px-3 py-2 bg-[#A865C9] rounded-lg shadow-md"
+            className="px-3 py-2 bg-[#805ad5] hover:bg-[#6b46c1] dark:bg-[#fbd38d] dark:hover:bg-[#f6ad55] rounded-lg shadow-md transition-colors duration-500"
           >
             {colorTheme === "light" ? (
-              <DarkModeRoundedIcon sx={{ color: "white" }} />
+              <LightModeOutlinedIcon sx={{ color: "#423f3c" }} />
             ) : (
-              <LightModeOutlinedIcon sx={{ color: "white" }} />
+              <DarkModeRoundedIcon sx={{ color: "white" }} />
             )}
           </button>
         </div>

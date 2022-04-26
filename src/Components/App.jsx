@@ -22,7 +22,7 @@ function App() {
   }
 
   return (
-    <div className="h-screen dark:bg-black transition-colors duration-500">
+    <div className="h-screen dark:bg-[#202023] transition-colors duration-500">
       <Header />
       <CreateArea onAdd={addNote} />
       {notes.map((noteItem, index) => {

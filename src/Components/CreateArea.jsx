@@ -54,7 +54,6 @@ function CreateArea(props) {
       <textarea
         name="content"
         id=""
-        // cols="30"
         rows={isExpanded ? 4 : 1}
         onChange={handleChange}
         onClick={expandNote}

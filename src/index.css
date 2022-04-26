@@ -11,18 +11,3 @@
 body {
   background-image: url("/src/assets/cubes.png");
 }
-
-.note-item {
-  width: 282px;
-}
-
-/* .create-note input,
-.create-note textarea {
-  width: 100%;
-  border: none;
-  padding: 4px;
-  outline: none;
-  font-size: 1.2em;
-  font-family: inherit;
-  resize: none;
-} */
