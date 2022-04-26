@@ -6,6 +6,8 @@ function CreateArea(props) {
     content: "",
   });
 
+  const [isExpanded, setExpanded] = useState(false);
+
   function handleChange(event) {
     const { name, value } = event.target;
     setNote((prevNote) => {
@@ -24,33 +26,42 @@ function CreateArea(props) {
     });
   }
 
+  function expandNote() {
+    setExpanded(true);
+  }
+
   return (
     <div className="shadow-md rounded-lg bg-white p-5 mx-auto my-7 relative w-1/3 text-lg text-gray-500">
-      <input
-        name="title"
-        onChange={handleChange}
-        value={note.title}
-        placeholder="Title"
-        className="focus:outline-none w-full border-none resize-none p-1"
-      />
+      {isExpanded ? (
+        <div>
+          <input
+            name="title"
+            onChange={handleChange}
+            value={note.title}
+            placeholder="Title"
+            className="focus:outline-none w-full border-none resize-none p-1"
+          />
+          <button onClick={submitNote}>
+            <AddBoxRoundedIcon
+              sx={{ color: "#FFB72B" }}
+              className="absolute bottom-3 right-3"
+              fontSize="large"
+            />
+          </button>
+        </div>
+      ) : null}
+
       <textarea
         name="content"
         id=""
-        cols="30"
-        rows="4"
+        // cols="30"
+        rows={isExpanded ? 4 : 1}
         onChange={handleChange}
+        onClick={expandNote}
         value={note.content}
         placeholder="Write a note..."
         className="resize-none focus:outline-none w-full border-none p-1"
       ></textarea>
-
-      <button onClick={submitNote}>
-        <AddBoxRoundedIcon
-          sx={{ color: "#FFB72B" }}
-          className="absolute bottom-3 right-3"
-          fontSize="large"
-        />
-      </button>
     </div>
   );
 }
