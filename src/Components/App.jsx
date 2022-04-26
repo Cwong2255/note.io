@@ -1,26 +1,41 @@
+import React, { useState } from "react";
 import CreateArea from "./CreateArea";
 import Footer from "./Footer";
 import Header from "./Header";
+import Note from "./Note";
 
 function App() {
+  const [notes, setNotes] = useState([]);
+
+  function addNote(newNote) {
+    setNotes((prevNotes) => {
+      return [...prevNotes, newNote];
+    });
+  }
+
+  function deleteNote(id) {
+    setNotes((prevNotes) => {
+      return prevNotes.filter((noteItem, index) => {
+        return index !== id;
+      });
+    });
+  }
+
   return (
     <div>
       <Header />
-
-      <CreateArea />
-
-      {/* <Note
-        title="CISC3320"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut pharetra.Tincidunt arcu non sodales neque. Volutpat est velit egestas dui id ornare arcu odio. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin."
-      />
-      <Note
-        title="CISC3320"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut pharetra.Tincidunt arcu non sodales neque. Volutpat est velit egestas dui id ornare arcu odio. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin."
-      />
-      <Note
-        title="CISC3320"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec enim diam vulputate ut pharetra.Tincidunt arcu non sodales neque. Volutpat est velit egestas dui id ornare arcu odio. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin."
-      /> */}
+      <CreateArea onAdd={addNote} />
+      {notes.map((noteItem, index) => {
+        return (
+          <Note
+            key={index}
+            id={index}
+            title={noteItem.title}
+            content={noteItem.content}
+            onDelete={deleteNote}
+          />
+        );
+      })}
       <Footer />
     </div>
   );
