@@ -1,5 +1,4 @@
 import AddBoxRoundedIcon from "@mui/icons-material/AddBoxRounded";
-import axios from "axios";
 import React, { useState } from "react";
 function CreateArea(props) {
   const [note, setNote] = useState({
@@ -20,7 +19,6 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
-    axios.post("http://localhost:3001/", note);
     props.onAdd(note);
     setNote({
       title: "",
