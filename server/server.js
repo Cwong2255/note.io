@@ -17,7 +17,6 @@ const noteSchema = new mongoose.Schema({
 const Note = mongoose.model("Note", noteSchema);
 
 app.post("/create", (req, res) => {
-  console.log(req.body);
   const title = req.body.title;
   const content = req.body.content;
   const newNote = new Note({

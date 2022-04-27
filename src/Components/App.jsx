@@ -15,10 +15,6 @@ function App() {
     });
   }, [notes]);
 
-  function addNote(newNote) {
-    axios.post("http://localhost:3001/create", newNote);
-  }
-
   function deleteNote(id) {
     setNotes((prevNotes) => {
       return prevNotes.filter((noteItem, index) => {
@@ -30,7 +26,7 @@ function App() {
   return (
     <div className="h-screen dark:bg-[#202023] transition-colors duration-500">
       <Header />
-      <CreateArea onAdd={addNote} />
+      <CreateArea />
       {notes.map((noteItem, index) => {
         return (
           <Note

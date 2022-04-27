@@ -11,7 +11,7 @@ function Note(props) {
       className="px-7 py-5 rounded-lg shadow-md relative bg-[#feff9c] bg-opacity-60 dark:bg-opacity-95 ml-11 text-gray-600 inline-block mb-1 mt-8"
       style={{ width: "282px" }}
     >
-      <h1 className="mb-3 font-bold">{props.title}</h1>
+      <h1 className="mb-3 font-bold break-words">{props.title}</h1>
       <p className="break-words">{props.content}</p>
       <button onClick={handleClick}>
         <DeleteRoundedIcon
