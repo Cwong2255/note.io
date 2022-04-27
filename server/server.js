@@ -36,6 +36,17 @@ app.get("/read", (req, res) => {
   });
 });
 
+app.delete("/delete/:id", (req, res) => {
+  const id = req.params.id;
+  Note.findByIdAndDelete({ _id: id }, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send("Item Deleted");
+    }
+  });
+});
+
 app.listen(3001, () => {
   console.log("Server is running on port 3001");
 });
