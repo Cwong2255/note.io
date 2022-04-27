@@ -42,7 +42,7 @@ app.delete("/delete/:id", (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.send("Item Deleted");
+      res.send(result);
     }
   });
 });

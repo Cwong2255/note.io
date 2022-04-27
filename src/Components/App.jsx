@@ -19,13 +19,10 @@ function App() {
   }
 
   return (
-    <div
-      className="h-screen dark:bg-[#202023] transition-colors duration-500"
-      style={{ height: "100%" }}
-    >
+    <div className="dark:bg-[#202023] transition-colors duration-500 h-full">
       <Header />
       <CreateArea />
-      {notes.map((noteItem, index) => {
+      {notes.map((noteItem) => {
         return (
           <Note
             key={noteItem._id}
